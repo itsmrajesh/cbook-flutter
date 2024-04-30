@@ -7,6 +7,13 @@ class AddContactDialog extends StatelessWidget {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController mobileController = TextEditingController();
 
+  bool _validateInputs() {
+    return firstNameController.text.isNotEmpty &&
+        lastNameController.text.isNotEmpty &&
+        emailController.text.isNotEmpty &&
+        mobileController.text.isNotEmpty;
+  }
+
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
@@ -41,18 +48,38 @@ class AddContactDialog extends StatelessWidget {
         ),
         TextButton(
           onPressed: () async {
-            await FirebaseFirestore.instance.collection('contacts').add({
-              'firstName': firstNameController.text,
-              'lastName': lastNameController.text,
-              'email': emailController.text,
-              'mobile': mobileController.text,
-            });
-            // Clear text fields after adding contact
-            firstNameController.clear();
-            lastNameController.clear();
-            emailController.clear();
-            mobileController.clear();
-            Navigator.of(context).pop();
+            if (_validateInputs()) {
+              await FirebaseFirestore.instance.collection('contacts').add({
+                'firstName': firstNameController.text,
+                'lastName': lastNameController.text,
+                'email': emailController.text,
+                'mobile': mobileController.text,
+              });
+              // Clear text fields after adding contact
+              firstNameController.clear();
+              lastNameController.clear();
+              emailController.clear();
+              mobileController.clear();
+              Navigator.of(context).pop();
+            } else {
+              showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  return AlertDialog(
+                    title: Text('Validation Error'),
+                    content: Text('Please fill in all fields.'),
+                    actions: [
+                      TextButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: Text('OK'),
+                      ),
+                    ],
+                  );
+                },
+              );
+            }
           },
           child: Text('Add'),
         ),
