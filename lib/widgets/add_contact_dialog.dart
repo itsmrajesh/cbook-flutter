@@ -3,13 +3,13 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 class AddContactDialog extends StatelessWidget {
   final TextEditingController firstNameController = TextEditingController();
-  final TextEditingController lastNameController = TextEditingController();
+  // final TextEditingController lastNameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController mobileController = TextEditingController();
 
   bool _validateInputs() {
     return firstNameController.text.isNotEmpty &&
-        lastNameController.text.isNotEmpty &&
+        // lastNameController.text.isNotEmpty &&
         emailController.text.isNotEmpty &&
         mobileController.text.isNotEmpty;
   }
@@ -23,12 +23,12 @@ class AddContactDialog extends StatelessWidget {
         children: [
           TextField(
             controller: firstNameController,
-            decoration: InputDecoration(labelText: 'First Name'),
+            decoration: InputDecoration(labelText: 'Name'),
           ),
-          TextField(
-            controller: lastNameController,
-            decoration: InputDecoration(labelText: 'Last Name'),
-          ),
+          // TextField(
+          //   controller: lastNameController,
+          //   decoration: InputDecoration(labelText: 'Last Name'),
+          // ),
           TextField(
             controller: emailController,
             decoration: InputDecoration(labelText: 'Email'),
@@ -49,15 +49,15 @@ class AddContactDialog extends StatelessWidget {
         TextButton(
           onPressed: () async {
             if (_validateInputs()) {
-              await FirebaseFirestore.instance.collection('contacts').add({
-                'firstName': firstNameController.text,
-                'lastName': lastNameController.text,
+              await FirebaseFirestore.instance.collection('contact').add({
+                'name': firstNameController.text,
+                // 'lastName': lastNameController.text,
                 'email': emailController.text,
                 'mobile': mobileController.text,
               });
               // Clear text fields after adding contact
               firstNameController.clear();
-              lastNameController.clear();
+              // lastNameController.clear();
               emailController.clear();
               mobileController.clear();
               Navigator.of(context).pop();

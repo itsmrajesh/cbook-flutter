@@ -4,14 +4,14 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 class EditContactDialog extends StatefulWidget {
   final String contactId;
   final String firstName;
-  final String lastName;
+  // final String lastName;
   final String email;
   final String mobile;
 
   EditContactDialog({
     required this.contactId,
     required this.firstName,
-    required this.lastName,
+    // required this.lastName,
     required this.email,
     required this.mobile,
   });
@@ -22,7 +22,7 @@ class EditContactDialog extends StatefulWidget {
 
 class _EditContactDialogState extends State<EditContactDialog> {
   late TextEditingController firstNameController;
-  late TextEditingController lastNameController;
+  // late TextEditingController lastNameController;
   late TextEditingController emailController;
   late TextEditingController mobileController;
 
@@ -30,7 +30,7 @@ class _EditContactDialogState extends State<EditContactDialog> {
   void initState() {
     super.initState();
     firstNameController = TextEditingController(text: widget.firstName);
-    lastNameController = TextEditingController(text: widget.lastName);
+    // lastNameController = TextEditingController(text: widget.lastName);
     emailController = TextEditingController(text: widget.email);
     mobileController = TextEditingController(text: widget.mobile);
   }
@@ -38,7 +38,7 @@ class _EditContactDialogState extends State<EditContactDialog> {
   @override
   void dispose() {
     firstNameController.dispose();
-    lastNameController.dispose();
+    // lastNameController.dispose();
     emailController.dispose();
     mobileController.dispose();
     super.dispose();
@@ -53,12 +53,12 @@ class _EditContactDialogState extends State<EditContactDialog> {
         children: [
           TextField(
             controller: firstNameController,
-            decoration: InputDecoration(labelText: 'First Name'),
+            decoration: InputDecoration(labelText: 'Name'),
           ),
-          TextField(
-            controller: lastNameController,
-            decoration: InputDecoration(labelText: 'Last Name'),
-          ),
+          // TextField(
+          //   controller: lastNameController,
+          //   decoration: InputDecoration(labelText: 'Last Name'),
+          // ),
           TextField(
             controller: emailController,
             decoration: InputDecoration(labelText: 'Email'),
@@ -79,11 +79,11 @@ class _EditContactDialogState extends State<EditContactDialog> {
         TextButton(
           onPressed: () async {
             await FirebaseFirestore.instance
-                .collection('contacts')
+                .collection('contact')
                 .doc(widget.contactId)
                 .update({
-              'firstName': firstNameController.text,
-              'lastName': lastNameController.text,
+              'name': firstNameController.text,
+              // 'lastName': lastNameController.text,
               'email': emailController.text,
               'mobile': mobileController.text,
             });

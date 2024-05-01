@@ -21,7 +21,7 @@ class DeleteContactDialog extends StatelessWidget {
         TextButton(
           onPressed: () async {
             await FirebaseFirestore.instance
-                .collection('contacts')
+                .collection('contact')
                 .doc(contactId)
                 .delete();
             Navigator.of(context).pop();
