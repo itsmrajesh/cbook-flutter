@@ -50,19 +50,19 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDZJtsLbesaivJj917PNmxBw8HKWYc2L5M',
-    appId: '1:598350197838:android:544e31e7a62bec87b77f1f',
-    messagingSenderId: '598350197838',
-    projectId: 'cbook-91a7a',
-    storageBucket: 'cbook-91a7a.appspot.com',
+    apiKey: 'AIzaSyCeVCCzgC3rF0q4JQ0OZx-BcQiuvPve0cQ',
+    appId: '1:475778186871:android:1bbdfedb356536bbd3d072',
+    messagingSenderId: '475778186871',
+    projectId: 'contact-app-233e1',
+    storageBucket: 'contact-app-233e1.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBlqAhw4s-HEfscrJAgH1eKtn_K7_p-a7E',
-    appId: '1:598350197838:ios:2bea03e58fe37abbb77f1f',
-    messagingSenderId: '598350197838',
-    projectId: 'cbook-91a7a',
-    storageBucket: 'cbook-91a7a.appspot.com',
+    apiKey: 'AIzaSyDLfMBg5Yu0dnEggxAiF4ucWyPDcDwloi8',
+    appId: '1:475778186871:ios:98d2c44834f7a074d3d072',
+    messagingSenderId: '475778186871',
+    projectId: 'contact-app-233e1',
+    storageBucket: 'contact-app-233e1.appspot.com',
     iosBundleId: 'io.github.itsmrajesh.cbook',
   );
 

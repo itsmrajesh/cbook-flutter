@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "598350197838",
-    "project_id": "cbook-91a7a",
-    "storage_bucket": "cbook-91a7a.appspot.com"
+    "project_number": "475778186871",
+    "project_id": "contact-app-233e1",
+    "storage_bucket": "contact-app-233e1.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:598350197838:android:544e31e7a62bec87b77f1f",
+        "mobilesdk_app_id": "1:475778186871:android:1bbdfedb356536bbd3d072",
         "android_client_info": {
           "package_name": "io.github.itsmrajesh.cbook"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDZJtsLbesaivJj917PNmxBw8HKWYc2L5M"
+          "current_key": "AIzaSyCeVCCzgC3rF0q4JQ0OZx-BcQiuvPve0cQ"
         }
       ],
       "services": {
