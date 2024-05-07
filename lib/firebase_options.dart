@@ -63,6 +63,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '475778186871',
     projectId: 'contact-app-233e1',
     storageBucket: 'contact-app-233e1.appspot.com',
+    iosClientId: '475778186871-fba7qipd7sj7jh3qm5jb1cuk5slvbb1l.apps.googleusercontent.com',
     iosBundleId: 'io.github.itsmrajesh.cbook',
   );
 

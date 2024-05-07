@@ -4,6 +4,9 @@ import 'firebase_options.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'screens/contact_list_screen.dart';
+import 'widgets/app.dart';
+
+const clientId = 'YOUR_CLIENT_ID';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,7 +21,7 @@ void main() async{
   // for (var doc in allDocs.docs) {
   //   print('Document ID: ${doc.id}, Data: ${doc.data()}');
   // }
-  runApp(const MyApp());
+  runApp(const MyAppNew());
 }
 
 class MyApp extends StatelessWidget {

@@ -12,7 +12,12 @@
           "package_name": "io.github.itsmrajesh.cbook"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "475778186871-vul1dp824er3omt8n9i5p16chsm1n5sv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyCeVCCzgC3rF0q4JQ0OZx-BcQiuvPve0cQ"
@@ -20,7 +25,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "475778186871-vul1dp824er3omt8n9i5p16chsm1n5sv.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "475778186871-fba7qipd7sj7jh3qm5jb1cuk5slvbb1l.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "io.github.itsmrajesh.cbook"
+              }
+            }
+          ]
         }
       }
     }
