@@ -29,7 +29,12 @@ class ContactList extends StatelessWidget {
         }
 
         final contacts = snapshot.data!.docs;
-        print('ID is ${contacts[0].id}');
+
+        if (contacts.isEmpty) {
+          return Center(
+            child: Text('No Contacts found'),
+          );
+        }
 
         return SingleChildScrollView(
           scrollDirection: Axis.horizontal,
