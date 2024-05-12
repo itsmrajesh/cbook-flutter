@@ -24,19 +24,19 @@ void main() async{
   runApp(const MyAppNew());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Firestore Contacts',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: ContactListScreen(),
-    );
-  }
-}
+// class MyApp extends StatelessWidget {
+//   const MyApp({super.key});
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'Firestore Contacts',
+//       theme: ThemeData(
+//         primarySwatch: Colors.blue,
+//       ),
+//       home: ContactListScreen(),
+//     );
+//   }
+// }
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});

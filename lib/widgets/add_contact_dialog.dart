@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class AddContactDialog extends StatelessWidget {
+
+  final User user;
+
+  AddContactDialog({Key? key, required this.user}) : super(key: key);
+
   final TextEditingController firstNameController = TextEditingController();
   // final TextEditingController lastNameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
@@ -54,6 +60,7 @@ class AddContactDialog extends StatelessWidget {
                 // 'lastName': lastNameController.text,
                 'email': emailController.text,
                 'mobile': mobileController.text,
+                'createdby': user.uid,
               });
               // Clear text fields after adding contact
               firstNameController.clear();

@@ -1,8 +1,10 @@
+import 'package:cbook/screens/user_info.dart';
 import 'package:firebase_auth/firebase_auth.dart' hide EmailAuthProvider;
 import 'package:firebase_ui_auth/firebase_ui_auth.dart';
 import 'package:firebase_ui_oauth_google/firebase_ui_oauth_google.dart';
 import 'package:flutter/material.dart';
 
+import '../screens/contact_list_screen.dart';
 import 'home.dart';
 
 class AuthGate extends StatelessWidget {
@@ -17,7 +19,7 @@ class AuthGate extends StatelessWidget {
           return SignInScreen(
             providers: [
               EmailAuthProvider(),
-              GoogleProvider(clientId: "475778186871-vul1dp824er3omt8n9i5p16chsm1n5sv.apps.googleusercontent.com"),  // new
+              GoogleProvider(clientId: "475778186871-vul1dp824er3omt8n9i5p16chsm1n5sv.apps.googleusercontent.com"),
             ],
             headerBuilder: (context, constraints, shrinkOffset) {
               return Padding(
@@ -56,8 +58,8 @@ class AuthGate extends StatelessWidget {
             },
           );
         }
-
-        return const HomeScreen();
+        final user = snapshot.data!;
+        return ContactListScreen(user: user,);
       },
     );
   }

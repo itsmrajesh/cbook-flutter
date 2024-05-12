@@ -3,12 +3,18 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'delete_contact_dialog.dart';
 import 'edit_contact_dialog.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class ContactList extends StatelessWidget {
+
+  final User user;
+
+  ContactList({Key? key, required this.user}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<QuerySnapshot>(
-      stream: FirebaseFirestore.instance.collection('contact').snapshots(),
+      stream: FirebaseFirestore.instance.collection('contact').where("createdby", isEqualTo: user.uid).snapshots(),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return Center(
